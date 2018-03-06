@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+
+    # Tell PHP that the mod_rewrite module is ENABLED.
+    SetEnv HTTP_MOD_REWRITE On
+
+    RewriteEngine on
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    # The rest of your rewrite rules here
+    RewriteRule . /index.php [L]
+
+</IfModule>
