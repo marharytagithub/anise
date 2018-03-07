@@ -9,4 +9,6 @@ spl_autoload_register(function ($class) {
 
 $url = $_SERVER['REQUEST_URI'];
 
-$router = new Router($url);
+$router = new Router();
+$classMethod = $router->resolve($url);
+var_dump($classMethod);
