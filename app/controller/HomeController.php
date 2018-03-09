@@ -9,6 +9,13 @@ class HomeController
 
     public function display()
     {
-        echo 'include controller Home';
+        $this->render('home');
+    }
+
+    private function render($view)
+    {
+        $pathToView = 'app/view/' . ucfirst($view) . 'View.php';
+
+        include $pathToView;
     }
 }
