@@ -6,10 +6,8 @@ class Router
     {
         $arrUrl = trim($url, '/');
         $arrUrl = explode("/", $arrUrl);
-        //var_dump($arrUrl); die;
 
-        // TODO no need full path due to autoload
-        $controller = 'app/controller/' . ucfirst($arrUrl[0]) . 'Controller.php';
+        $controller = ucfirst($arrUrl[0]) . 'Controller';
         $method = $arrUrl[1];
 
         return [$controller, $method];

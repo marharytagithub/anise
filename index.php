@@ -19,10 +19,7 @@ $url = $_SERVER['REQUEST_URI'];
 $router = new Router();
 $classMethod = $router->resolve($url);
 
-$pathToController = $classMethod[0];
-
-$controllerName = basename($pathToController, ".php");
-//var_dump($controllerName);
+$controllerName = $classMethod[0];
 $methodOfObj = $classMethod[1];
 
 $appropriateController = new $controllerName();
